@@ -1,0 +1,9 @@
+<h2>Category</h2>
+<div *ngIf="categoryResult">
+  <ul class="categoryResult">
+    <li *ngFor="let item of categoryResult.result.category">
+      <span class="badge">{{item.category}} | {{item.description_th}} | {{item.description_eng}}</span>
+    </li>
+  </ul>
+</div>
+<!-- {{categories | json}} -->
