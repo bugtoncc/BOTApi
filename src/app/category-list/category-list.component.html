@@ -1,0 +1,12 @@
+<h4>{{title}}</h4>
+<div *ngIf="categoryListResult">
+  <ul class="categoryListResult">
+    <li *ngFor="let item of categoryListResult.result.category" class="mb-3">
+      {{item.category}} <a routerLink="/series-list/{{item.category}}">
+        [series list]
+      </a><br />
+      description_th: {{item.description_th}} <br />
+      description_eng: {{item.description_eng}}
+    </li>
+  </ul>
+</div>

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { ICategory } from './ICategory';
+import { ICategoryList } from './Interface/ICategoryList';
+import { ISeriesList } from './Interface/ISeriesList';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
@@ -10,7 +11,7 @@ import { catchError, retry } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ConfigService {
-  configUrl = 'https://apigw1.bot.or.th/bot/public/categorylist/category_list/';
+  categoryUrl = 'https://apigw1.bot.or.th/bot/public/categorylist';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -21,7 +22,17 @@ export class ConfigService {
 
   constructor(private http: HttpClient) {}
 
-  getData(): Observable<ICategory> {
-    return this.http.get<ICategory>(this.configUrl, this.httpOptions);
+  getCategoryList(): Observable<ICategoryList> {
+    return this.http.get<ICategoryList>(
+      this.categoryUrl + '/category_list/',
+      this.httpOptions
+    );
+  }
+
+  getSeriesList(category: string): Observable<ISeriesList> {
+    return this.http.get<ISeriesList>(
+      this.categoryUrl + '/series_list/?category=' + category,
+      this.httpOptions
+    );
   }
 }

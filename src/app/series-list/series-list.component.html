@@ -1,0 +1,13 @@
+<h4>{{categoryTitle}}</h4>
+<div *ngIf="seriesListResult">
+  <ul class="seriesListResult">
+    <li *ngFor="let item of seriesListResult.result.series" class="mb-3">
+      {{item.series_code}} <br />
+      series_name_th: {{item.series_name_th}} <br />
+      series_name_eng: {{item.series_name_eng}} <br />
+      observation_start: {{item.observation_start}} <br />
+      observation_end: {{item.observation_end}} <br />
+      last_update_date: {{item.last_update_date}} <br />
+    </li>
+  </ul>
+</div>

@@ -1,7 +1,7 @@
-export interface ICategory {
+export interface ICategoryList {
   result: {
     api: string;
-    timestamp: string;
+    timestamp: Date;
     category: {
       category: string;
       description_th: string;

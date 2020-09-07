@@ -6,11 +6,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { StatCategoryComponent } from './stat-category/stat-category.component';
 import { ConfigComponent } from './config/config.component';
+import { CategoryListComponent } from './category-list/category-list.component';
+import { SeriesListComponent } from './series-list/series-list.component';
+
 
 @NgModule({
-  declarations: [AppComponent, StatCategoryComponent, ConfigComponent],
+  declarations: [
+    AppComponent,
+    ConfigComponent,
+    CategoryListComponent,
+    SeriesListComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
